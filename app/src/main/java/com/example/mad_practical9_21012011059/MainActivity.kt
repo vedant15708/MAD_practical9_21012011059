@@ -20,9 +20,11 @@ class MainActivity : AppCompatActivity() {
         super.onWindowFocusChanged(hasFocus)
         if(hasFocus){
             alramanimation.start()
+            heartanimation.start()
         }
         else{
             alramanimation.stop()
+            heartanimation.stop()
         }
     }
 
