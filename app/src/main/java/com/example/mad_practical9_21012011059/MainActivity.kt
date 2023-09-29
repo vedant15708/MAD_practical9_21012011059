@@ -7,12 +7,13 @@ import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
     lateinit var alramanimation:AnimationDrawable
+    lateinit var heartanimation:AnimationDrawable
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val imageview=findViewById<ImageView>(R.id.image)
         imageview.setBackgroundResource(R.drawable.alram_animation_list)
-        alramanimation=imageview.background
+        alramanimation=imageview.background as AnimationDrawable
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
