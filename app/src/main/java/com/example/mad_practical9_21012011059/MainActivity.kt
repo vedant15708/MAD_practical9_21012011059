@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val imageview=findViewById<ImageView>(R.id.image)
+        val imageview=findViewById<ImageView>(R.id.animation)
         imageview.setBackgroundResource(R.drawable.alram_animation_list)
         alramanimation=imageview.background as AnimationDrawable
     }
