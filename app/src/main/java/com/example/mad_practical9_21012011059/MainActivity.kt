@@ -14,6 +14,9 @@ class MainActivity : AppCompatActivity() {
         val imageview=findViewById<ImageView>(R.id.animation)
         imageview.setBackgroundResource(R.drawable.alram_animation_list)
         alramanimation=imageview.background as AnimationDrawable
+        val animate = findViewById<ImageView>(R.id.heart)
+        animate.setBackgroundResource(R.drawable.heart_animation_list)
+        heartanimation = animate.background as AnimationDrawable
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
