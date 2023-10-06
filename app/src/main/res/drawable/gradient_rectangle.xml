@@ -8,5 +8,5 @@
     android:centerY="0.9"
     android:gradientRadius="1500"
     android:startColor="@color/pink"
-    android:endColor="@color/BLUE"/>
+    android:endColor="@color/blue"/>
 </shape>

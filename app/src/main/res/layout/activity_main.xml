@@ -91,8 +91,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:text="Cancel Alarm"
+                        android:background="#00FFFFFF"
                         android:backgroundTint="@color/blue"
-
+                        android:textColor="@color/blue"
+                        app:iconTint="@color/blue"
                         app:icon="@drawable/baseline_alarm_off_24">
 
                     </com.google.android.material.button.MaterialButton>
