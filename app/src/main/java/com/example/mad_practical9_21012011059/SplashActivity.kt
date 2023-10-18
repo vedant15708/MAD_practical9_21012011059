@@ -1,26 +1,45 @@
 package com.example.mad_practical9_21012011059
 
+import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.Animation
+import android.view.animation.Animation.AnimationListener
 import android.widget.ImageView
+import android.view.animation.AnimationUtils
 
-class SplashActivity : AppCompatActivity() {
-    lateinit var uvpcelogoanimation : AnimationDrawable
+class SplashActivity : AppCompatActivity(),AnimationListener {
+    lateinit var uvpcelogoanimation: AnimationDrawable
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         val img = findViewById<ImageView>(R.id.uvpce_logo)
         img.setBackgroundResource(R.drawable.logo_animation_list)
         uvpcelogoanimation = img.background as AnimationDrawable
+        var twinAnimation = AnimationUtils.loadAnimation(this, R.anim.twin_animation)
+        twinAnimation.setAnimationListener(this)
+
     }
+
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-        if (hasFocus){
+        if (hasFocus) {
             uvpcelogoanimation.start()
-        }
-        else{
+        } else {
             uvpcelogoanimation.stop()
         }
+    }
+
+    override fun onAnimationStart(p0: Animation?) {
+
+    }
+
+    override fun onAnimationEnd(p0: Animation?) {
+        Intent(this, MainActivity::class.java).apply { startActivity(this) }
+    }
+
+    override fun onAnimationRepeat(p0: Animation?) {
+
     }
 }
