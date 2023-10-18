@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils
 
 class SplashActivity : AppCompatActivity(),AnimationListener {
     lateinit var uvpcelogoanimation: AnimationDrawable
+lateinit var twinAnimation: Animation
+lateinit var img: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
