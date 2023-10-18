@@ -28,6 +28,7 @@ lateinit var img: ImageView
         super.onWindowFocusChanged(hasFocus)
         if (hasFocus) {
             uvpcelogoanimation.start()
+img.startAnimation(twinAnimation)
         } else {
             uvpcelogoanimation.stop()
         }
