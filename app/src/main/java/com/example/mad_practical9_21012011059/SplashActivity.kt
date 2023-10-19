@@ -9,40 +9,37 @@ import android.view.animation.Animation.AnimationListener
 import android.widget.ImageView
 import android.view.animation.AnimationUtils
 
-class SplashActivity : AppCompatActivity(),AnimationListener {
-    lateinit var uvpcelogoanimation: AnimationDrawable
-lateinit var twinAnimation: Animation
-lateinit var img: ImageView
+class SplashActivity : AppCompatActivity(), AnimationListener {
+    lateinit var uvpcelogoanimation : AnimationDrawable
+    lateinit var twinAnimation: Animation
+    lateinit var img: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        val img = findViewById<ImageView>(R.id.uvpce_logo)
+        img = findViewById<ImageView>(R.id.uvpce_logo)
         img.setBackgroundResource(R.drawable.logo_animation_list)
         uvpcelogoanimation = img.background as AnimationDrawable
-        var twinAnimation = AnimationUtils.loadAnimation(this, R.anim.twin_animation)
+        twinAnimation = AnimationUtils.loadAnimation(this, R.anim.twin_animation)
         twinAnimation.setAnimationListener(this)
-
     }
-
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) {
+        if (hasFocus){
             uvpcelogoanimation.start()
-img.startAnimation(twinAnimation)
-        } else {
+            img.startAnimation(twinAnimation)
+        }
+        else{
             uvpcelogoanimation.stop()
         }
     }
-
     override fun onAnimationStart(p0: Animation?) {
 
     }
-
     override fun onAnimationEnd(p0: Animation?) {
-        Intent(this, MainActivity::class.java).apply { startActivity(this) }
+        Intent(this,MainActivity::class.java).also { startActivity(it) }
+    }
+    override fun onAnimationRepeat(p0: Animation?){
+
     }
 
-    override fun onAnimationRepeat(p0: Animation?) {
-
-    }
 }
